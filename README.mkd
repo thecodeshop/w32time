@@ -1,0 +1,36 @@
+## Build and install it
+
+1. Install the [DevKit](https://github.com/thecodeshop/ruby/wiki/Downloads) and add
+   it's artifacts to your `PATH`
+
+        C:\w32time-git>\DevKit\devkitvars.bat
+        Adding the DevKit to PATH...
+
+2. Update the [Makefile](https://github.com/thecodeshop/w32time/blob/master/Makefile)
+   for your needs. For example, rename the exe and add it to a directory already on your
+   `PATH`
+
+        C:\w32time-git>vim Makefile
+        # mod to this: cp w32time.exe C:\tools\timer.exe
+
+3. Build and install it
+
+        C:\w32time-git>make w32time.exe install
+        gcc -O2 -o w32time.exe -Wall w32time.c
+        w32time.c: In function 'main':
+        w32time.c:109:7: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'DWORD' [-Wformat]
+        w32time.c:118:7: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'DWORD' [-Wformat]
+        strip -s w32time.exe
+        cp w32time.exe C:\tools\timer.exe
+
+4. Test it
+
+        C:\>timer echo Hello Ruby!
+        Hello Ruby!
+        real    0.052
+        system  0.015
+        user    0.000
+
+## Use it
+
+_COMING SOON_
