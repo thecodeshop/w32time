@@ -33,4 +33,19 @@
 
 ## Use it
 
-_COMING SOON_
+    C:\>timer ruby -ve "10_000_000.times { |i| i**3 }
+    ruby 1.9.3p0 (2011-11-08 revision 33661) [i386-mingw32]
+    real    9.079
+    system  0.015
+    user    9.048
+
+    C:\>timer \jruby\bin\jruby.exe -ve "10_000_000.times { |i| i**3 }
+    jruby 1.6.5 (ruby-1.8.7-p330) (2011-10-25 9dcd388) (Java HotSpot(TM) Client VM 1.7.0_01) [Windows 7-x86-java]
+    real    5.304
+    system  0.202
+    user    5.054
+
+    C:\>timer lua -e "for i = 0,10000000 do r=i^3 end"
+    real    1.185
+    system  0.000
+    user    1.170
