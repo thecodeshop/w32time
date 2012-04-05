@@ -15,7 +15,7 @@
 
 3. Build and install it
 
-        C:\w32time-git>make w32time.exe install
+        C:\w32time-git>make install
         gcc -O2 -o w32time.exe -Wall w32time.c
         w32time.c: In function 'main':
         w32time.c:109:7: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'DWORD' [-Wformat]
